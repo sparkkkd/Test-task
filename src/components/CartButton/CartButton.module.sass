@@ -1,0 +1,53 @@
+.cartButton
+  padding: 16px 16px
+  width: 70%
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 8px
+  font-size: 14px
+  font-weight: bold
+  transition: all .3s
+  &:hover
+    box-shadow: 0 12px 16px -7px rgba(21, 81, 229, 0.44)
+    background: #316cff
+
+.cartIcon
+  margin-right: 7px
+  rect
+    fill: #fff
+
+.inactiveButton
+  background-color: #1551e5
+  color: #fff
+
+.activeButton
+  width: 70%
+  background: none
+  border: 1px solid #1551e5
+  &:hover
+    cursor: inherit
+    box-shadow: none
+    background: none
+  span
+    color: #000
+    font-size: 16px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+  svg
+    rect
+      fill: #000
+
+.counter
+  z-index: 999
+  cursor: pointer
+  &:hover
+    transform: scale(1.1)
+
+.minus
+  margin-right: auto !important
+
+.plus
+  margin-left: auto
