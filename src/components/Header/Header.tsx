@@ -1,0 +1,27 @@
+import styles from './header.module.sass'
+import Logo from '../../images/logo.svg?react'
+import MenuButton from '../MenuButton/MenuButton'
+import Search from '../Search/Search'
+
+import NotificationIcon from '../../images/notification-icon.svg?react'
+import FavoriteIcon from '../../images/fav-Icon.svg?react'
+import CartComponent from '../CartComponent/CartComponent'
+import UserComponent from '../UserComponent/UserComponent'
+
+interface HeaderProps {}
+
+export default function Header({}: HeaderProps) {
+	return (
+		<header className={styles.header}>
+			<Logo className='icon' />
+			<MenuButton />
+			<Search />
+			<div className={styles.notificationsAndFav}>
+				<NotificationIcon className='icon' />
+				<FavoriteIcon className='icon' />
+			</div>
+			<CartComponent />
+			<UserComponent />
+		</header>
+	)
+}
