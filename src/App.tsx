@@ -1,5 +1,7 @@
 import './App.sass'
+import Contacts from './components/Contacts/Contacts'
 import Divider from './components/Divider/Divider'
+import FooterNav from './components/FooterNav/FooterNav'
 import GoodComponent from './components/GoodComponent/GoodComponent'
 import Header from './components/Header/Header'
 import Navigation from './components/Navigation/Navigation'
@@ -13,9 +15,13 @@ function App() {
 			<Divider />
 			<Navigation />
 			<Divider />
-			<main>
+			<main className='main'>
 				<GoodComponent />
 			</main>
+			<Divider />
+			<Contacts />
+			<Divider />
+			<FooterNav />
 		</div>
 	)
 }
