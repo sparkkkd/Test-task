@@ -1,6 +1,7 @@
 import './App.sass'
 import Contacts from './components/Contacts/Contacts'
 import Divider from './components/Divider/Divider'
+import Footer from './components/Footer/Footer'
 import FooterNav from './components/FooterNav/FooterNav'
 import GoodComponent from './components/GoodComponent/GoodComponent'
 import Header from './components/Header/Header'
@@ -22,6 +23,8 @@ function App() {
 			<Contacts />
 			<Divider />
 			<FooterNav />
+			<Divider />
+			<Footer />
 		</div>
 	)
 }
