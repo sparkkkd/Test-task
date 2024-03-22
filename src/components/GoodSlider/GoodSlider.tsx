@@ -1,13 +1,9 @@
 import styles from './GoodSlider.module.sass'
 
-import sliderMain from '../../images/boots-main.png'
-
-import LeftArrow from '../../images/arrow-left-icon.svg?react'
-import RightArrow from '../../images/arrow-right-icon.svg?react'
 import { sliderImgs } from './constants'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Thumbs, FreeMode, Navigation, Controller } from 'swiper/modules'
+import { Thumbs } from 'swiper/modules'
 import 'swiper/css'
 import { useState } from 'react'
 
