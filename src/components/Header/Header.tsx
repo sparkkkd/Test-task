@@ -4,7 +4,7 @@ import MenuButton from '../MenuButton/MenuButton'
 import Search from '../Search/Search'
 
 import NotificationIcon from '../../images/notification-icon.svg?react'
-import FavoriteIcon from '../../images/fav-Icon.svg?react'
+import FavoriteIcon from '../../images/fav-icon.svg?react'
 import CartComponent from '../CartComponent/CartComponent'
 import UserComponent from '../UserComponent/UserComponent'
 

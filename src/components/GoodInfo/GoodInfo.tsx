@@ -1,55 +1,36 @@
-import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { cartSlice } from '../../store/reducers/CartSlice'
 import CartButton from '../CartButton/CartButton'
+import DeliveryInfo from '../DeliveryInfo/DeliveryInfo'
 import Divider from '../Divider/Divider'
+import FavoriteButton from '../FavoriteButton/FavoriteButton'
+import GoodDescribe from '../GoodDescribe/GoodDescribe'
+import GoodPackageOrder from '../GoodPackageOrder/GoodPackageOrder'
+import GoodSpecifications from '../GoodSpecifications/GoodSpecifications'
 import styles from './GoodInfo.module.sass'
-import Switch from '@mui/material/Switch'
 
 export interface GoodInfoProps {}
 
-const label = { inputProps: { 'aria-label': 'Switch demo' } }
-
 export default function GoodInfo({}: GoodInfoProps) {
-	const dispatch = useAppDispatch()
-	const { switchPackage } = cartSlice.actions
-
-	const { isPackage } = useAppSelector((state) => state.cartReducer)
-
-	console.log(isPackage)
+	const price: number = 122566
 
 	return (
-		<div className={styles.goodInfo}>
-			<span className={styles.sale}>166 534.00 цена без скидки</span>
-			<span className={styles.price}>
-				122 566 ₽ <span>-15%</span>
-			</span>
-			<div className={styles.package}>
-				<span className={styles.packageCount}>12 штук в уп.</span>
-				<Switch
-					onChange={() => dispatch(switchPackage())}
-					className={styles.switch}
-					{...label}
-				/>
-				<span>Заказ упаковкой</span>
-			</div>
-			<Divider />
-			<div className={styles.deliveryInfo}>
-				<div>
-					<span>Завтра</span>
-					Доставка
+		<div>
+			<div className={styles.container}>
+				<div className={styles.goodOrder}>
+					<span className={styles.sale}>166 534.00 цена без скидки</span>
+					<span className={styles.price}>
+						122 566 ₽ <span>-15%</span>
+					</span>
+					<GoodPackageOrder />
+					<Divider />
+					<DeliveryInfo />
+					<div className={styles.cartButtonWrapper}>
+						<CartButton price={price} />
+						<FavoriteButton />
+					</div>
 				</div>
-				<div>
-					<span>7 шт.</span>
-					Тарасовка
-				</div>
-				<div>
-					<span>7 шт.</span>
-					Тарасовка
-				</div>
+				<GoodSpecifications />
 			</div>
-			<div className={styles.cartButtonWrapper}>
-				<CartButton />
-			</div>
+			<GoodDescribe />
 		</div>
 	)
 }

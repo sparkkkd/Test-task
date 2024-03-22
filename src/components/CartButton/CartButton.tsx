@@ -7,18 +7,19 @@ import MinusIcon from '../../images/minus-icon.svg?react'
 import PlusIcon from '../../images/plus-icon.svg?react'
 import { cartSlice } from '../../store/reducers/CartSlice'
 
-export interface CartButtonProps {}
+export interface CartButtonProps {
+	price: number
+}
 
-export default function CartButton({}: CartButtonProps) {
+export default function CartButton({ price }: CartButtonProps) {
 	const { count } = useAppSelector((state) => state.cartReducer)
 	const dispatch = useAppDispatch()
-	console.log(count)
 
 	const { addToCart, removeFromCart } = cartSlice.actions
 
 	function handleButtonClick() {
 		if (count === 0) {
-			dispatch(addToCart())
+			dispatch(addToCart(price))
 		}
 
 		return
@@ -36,12 +37,12 @@ export default function CartButton({}: CartButtonProps) {
 			{count > 0 && (
 				<span>
 					<MinusIcon
-						onClick={() => dispatch(removeFromCart())}
+						onClick={() => dispatch(removeFromCart(price))}
 						className={`${styles.counter} ${styles.minus}`}
 					/>
 					<span>{count} штуки</span>
 					<PlusIcon
-						onClick={() => dispatch(addToCart())}
+						onClick={() => dispatch(addToCart(price))}
 						className={`${styles.counter} ${styles.plus}`}
 					/>
 				</span>
