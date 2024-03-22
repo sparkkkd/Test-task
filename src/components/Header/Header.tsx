@@ -13,7 +13,9 @@ interface HeaderProps {}
 export default function Header({}: HeaderProps) {
 	return (
 		<header className={styles.header}>
-			<Logo className='icon' />
+			<a href='/'>
+				<Logo />
+			</a>
 			<MenuButton />
 			<Search />
 			<div className={styles.notificationsAndFav}>
